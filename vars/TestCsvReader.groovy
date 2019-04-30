@@ -4,7 +4,8 @@ import com.opencsv.CSVReader
 import com.opencsv.CSVWriter
 import com.xlson.groovycsv.CsvParser
 
-class TestCsvReader 
+def call()
+{
 def csv = '''Name,Lastname
 Mark,Andersson
 Pete,Hansen'''
@@ -13,7 +14,4 @@ def data = new CsvParser().parse(csv)
 for(line in data) {
     println "$line.Name $line.Lastname"
 }
-      }
-    }
-  }
-}
+     
