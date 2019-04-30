@@ -4,7 +4,7 @@ import com.opencsv.CSVWriter
 
 class TestCsvReader 
       //csv file containing data
-      String strFile = "C:\JenkinsAutomation\Newjob.csv";
+      string strFile = 'C:\JenkinsAutomation\Newjob.csv'
       CSVReader reader = new CSVReader(new FileReader(strFile));
       String [] nextLine;
       int lineNumber = 0;
