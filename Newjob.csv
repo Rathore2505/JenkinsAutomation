@@ -1,0 +1,14 @@
+[VmSetup]
+Actions,VmName,Network,SnapshotName
+[VmPowerOff-VmRevert-VmPowerOn],pa-tst4-ws16,NEPTUNE,BaseImage
+
+[ServerSetup]
+Actions,VmName
+[BuildDownload-Exec_ServerInstall],pa-tst4-ws16
+
+[ClientSetup]
+Actions,VmName
+[SVNCheckout-Exec_ClientScript],pa-tst4-ws16
+
+[EmailConfiguration]
+Emailconfig= admin@merge.com,25,mail.products.network.internal
