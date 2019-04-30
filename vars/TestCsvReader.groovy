@@ -1,19 +1,18 @@
 @Grab('com.opencsv:opencsv:4.0')
+@Grab('com.xlson.groovycsv:groovycsv:0.2')
 import com.opencsv.CSVReader
 import com.opencsv.CSVWriter
+import com.xlson.groovycsv.CsvParser
 
 class TestCsvReader 
-      //csv file containing data
-      string strFile = 'C:\JenkinsAutomation\Newjob.csv'
-      CSVReader reader = new CSVReader(new FileReader(strFile));
-      String [] nextLine;
-      int lineNumber = 0;
-      while ((nextLine = reader.readNext()) != null) {
-        lineNumber++;
-        System.out.println("Line # " + lineNumber);
+def csv = '''Name,Lastname
+Mark,Andersson
+Pete,Hansen'''
 
-        // nextLine[] is an array of values from the line
-        System.out.println(nextLine[4] + "etc...");
+def data = new CsvParser().parse(csv)
+for(line in data) {
+    println "$line.Name $line.Lastname"
+}
       }
     }
   }
