@@ -12,10 +12,7 @@ class TestCsvReader {
         def Reader csvFileReader = new StringReader(csv)
         def CSVReader reader = new CSVReader(csvFileReader)
 
-        reader.iterator().each { fields ->
-            writer.writeNext(fields)
-        }
-        reader.close()
-        writer.close()
+         println 'Values ' + reader + '.'
+        
     }
 }
