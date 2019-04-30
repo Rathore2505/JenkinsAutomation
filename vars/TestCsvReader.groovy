@@ -1,3 +1,4 @@
+@Grab('com.opencsv:opencsv:4.0')
 import com.opencsv.CSVReader
 import com.opencsv.CSVWriter
 
