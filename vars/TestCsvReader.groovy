@@ -14,4 +14,5 @@ def data = new CsvParser().parse(csv)
 for(line in data) {
     println "$line.Name $line.Lastname"
 }
+}
      
