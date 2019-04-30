@@ -6,13 +6,18 @@ import com.xlson.groovycsv.CsvParser
 
 def call()
 {
-def csv = '''Name,Lastname
-Mark,Andersson
-Pete,Hansen'''
+def mapList = []
 
-def data = new CsvParser().parse(csv)
-for(line in data) {
-    println "$line.Name $line.Lastname"
-}
-}
-     
+File csvFile = new File("C:\JenkinsAutomation\Newjob.csv")
+
+csvFile.eachLine { line ->
+    def parts = line.split(",")
+    def tmpMap = [:]
+
+    tmpMap.putAt("Sno", parts[0])
+    tmpMap.putAt("Service", parts[1])
+   
+
+    mapList.add(tmpMap)
+    //println 'Sending mail to ' + mapList + '.'
+} 
