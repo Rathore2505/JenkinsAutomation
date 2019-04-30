@@ -46,6 +46,8 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         message.setRecipients(Message.RecipientType.TO, receivers);
         message.setSubject(subject);
         message.setText(text);
+        BodyPart messageBodyPart = new MimeBodyPart()
+        messageBodyPart.attachFile('C:\\Program Files (x86)\\Jenkins\\Text.txt')
         println 'Sending mail to ' + receivers + '.'
         Transport.send(message);
         println 'Mail sent.'
