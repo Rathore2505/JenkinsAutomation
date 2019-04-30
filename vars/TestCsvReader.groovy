@@ -8,7 +8,7 @@ def call()
 {
 def mapList = []
 
-File csvFile = new File("C:\JenkinsAutomation\Newjob.csv")
+File csvFile = new File('C:\\JenkinsAutomation\\Newjob.csv')
 
 csvFile.eachLine { line ->
     def parts = line.split(",")
