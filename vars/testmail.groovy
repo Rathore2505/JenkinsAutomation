@@ -53,7 +53,7 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         multipart.addBodyPart(messageBodyPart)
         println "--> Attachement added"
         // Send the complete message parts
-        msg.setContent(multipart)
+        message.setContent(multipart)
         ///////////////////
         //Multipart multipart = new MimeMultipart()
         //messageBodyPart.setContent(text,"text/html")
