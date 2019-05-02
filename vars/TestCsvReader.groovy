@@ -1,7 +1,5 @@
-Grab('org.apache.commons:commons-csv:1.2')
-import org.apache.commons.csv.CSVParser
-import static org.apache.commons.csv.CSVFormat.*
-import java.nio.file.Paths
+@Grab('com.xlson.groovycsv:groovycsv:0.2')
+import com.xlson.groovycsv.CsvParser
 
 def call()
 {
