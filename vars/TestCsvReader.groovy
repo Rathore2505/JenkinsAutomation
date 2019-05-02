@@ -18,12 +18,16 @@ def call()
              println  ''+ parts[2].toString() + ''
              for(def j=0;j<parts.size;j++)
               {
-                tmpMap.putAt('a' , parts[j])
+             Multimap<String, String> myMultimap = ArrayListMultimap.create();
+             myMultimap.put("Fruits", parts[j].toString());
+             // Getting values
+             Collection<string> fruits = myMultimap.get("Fruits");
+             System.out.println(fruits); // [Bannana, Apple, Pear]
               }
         }
     }
-    mapList.add(tmpMap)
-    println '' + mapList + '.'  
+    //mapList.add(tmpMap)
+    //println '' + mapList + '.'  
         
          
     
