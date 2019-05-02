@@ -4,7 +4,7 @@ import com.xlson.groovycsv.CsvParser
 def call()
 {
     def mapList = []
-    def tmpMap = []
+    def list= []
     File csvFile = new File('C:\\JenkinsAutomation\\Newjob.csv')
     String fileContents = new File('C:/JenkinsAutomation/Newjob.csv').text
     List<String[]> allData = fileContents.split('\n')
@@ -18,18 +18,11 @@ def call()
              println  ''+ parts[2].toString() + ''
              for(def j=0;j<parts.size;j++)
               {
-             Multimap<String, String> myMultimap = ArrayListMultimap.create();
-             myMultimap.put("Fruits", parts[j].toString());
-             // Getting values
-             Collection<string> fruits = myMultimap.get("Fruits");
-             System.out.println(fruits); // [Bannana, Apple, Pear]
+              list.add(parts[i].toString()) 
               }
         }
     }
     //mapList.add(tmpMap)
-    //println '' + mapList + '.'  
-        
-         
-    
+    //println '' + mapList + '.'   
  
 } 
