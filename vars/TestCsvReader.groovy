@@ -19,6 +19,7 @@ def call()
              for(def j=0;j<parts.size;j++)
               {
               list.add(parts[i].toString()) 
+                  println"Part Val "+parts[i]
               }
         }
     }
