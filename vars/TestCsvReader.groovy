@@ -7,12 +7,8 @@ def call()
 {
 
 File csvFile = new File('C:\\JenkinsAutomation\\Newjob.csv')
-Paths.get(csvFile').withReader { reader ->
-    CSVParser csv = new CSVParser(reader, DEFAULT.withHeader())
-        for (record in csv.iterator())
-        {
-        println record.dump()
-        }
-}
+def data = new CsvParser().parse(csvFile)
+for(line in data) {
+    println 'Sending mail to ' + line + '.'
 
 } 
