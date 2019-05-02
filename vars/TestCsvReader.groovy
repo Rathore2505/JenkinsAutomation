@@ -5,7 +5,7 @@ def call()
 {
 
 File csvFile = new File('C:\\JenkinsAutomation\\Newjob.csv')
-String fileContents = new File(csvFile').text
+String fileContents = new File('C:/JenkinsAutomation/Newjob.csv').text
     println 'Sending mail to ' + fileContents + '.'
 
 } 
