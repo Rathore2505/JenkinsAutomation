@@ -5,8 +5,8 @@ def call()
 {
 
     File csvFile = new File('C:\\JenkinsAutomation\\Newjob.csv')
-    String fileContents = new File('C:/JenkinsAutomation/Newjob.csv')
-    String[] lines = fileContents.text.split('\n')
+    String fileContents = new File('C:/JenkinsAutomation/Newjob.csv').text
+    String[] lines = fileContents.split('\n')
     println 'File All Text' + lines + '.'
     println 'File All Text' + fileContents + '.'
 
