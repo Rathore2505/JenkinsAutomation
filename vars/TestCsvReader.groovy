@@ -12,7 +12,7 @@ def call()
         //boolean fruitFound = allData.any{i.toString().contains('Emilconfig')}
         if(i.toString().contains('Emilconfig'))
         {
-           println '' + i + '.'  
+           println '' + i.toString() + '.'  
         }
         
       
