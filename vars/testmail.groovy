@@ -31,12 +31,8 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         instance.save() 
     
     Properties props = new Properties();
-    //props.put("mail.smtp.auth", "true");
     props.put("mail.smtp.host", SMTPHost);
-    //props.put("mail.smtp.user", SMTPUser);
     props.put("mail.smtp.port", SMTPPort);
-    //props.put("mail.smtp.password", SMTPPassword);
-
     Session session = Session.getInstance(props, null);
    
         Message message = new MimeMessage(session);
@@ -46,12 +42,26 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         message.setRecipients(Message.RecipientType.TO, receivers);
         message.setSubject(subject);
         message.setText(text);
-        Multipart multipart = new MimeMultipart()
-        File csvFile = new File('C:\\Program Files (x86)\\Jenkins\\Text.txt')
+        ////////////////////
         BodyPart messageBodyPart = new MimeBodyPart()
-        messageBodyPart.attachFile(csvFile)
+        messageBodyPart.setContent(text,"text/html")
+        Multipart multipart = new MimeMultipart()
         multipart.addBodyPart(messageBodyPart)
-        println 'Sending mail to ' + receivers + '.'
+        messageBodyPart = new MimeBodyPart()
+        File csvFile = new File('C:\\Program Files (x86)\\Jenkins\\Text.txt')
+        messageBodyPart.attachFile(csvFile)  
+        multipart.addBodyPart(messageBodyPart)
+        println "--> Attachement added"
+        // Send the complete message parts
+        msg.setContent(multipart)
+        ///////////////////
+        //Multipart multipart = new MimeMultipart()
+        //messageBodyPart.setContent(text,"text/html")
+        //File csvFile = new File('C:\\Program Files (x86)\\Jenkins\\Text.txt')
+        //BodyPart messageBodyPart = new MimeBodyPart()
+        //messageBodyPart.attachFile(csvFile)
+        //multipart.addBodyPart(messageBodyPart)
+        // println 'Sending mail to ' + receivers + '.'
         Transport.send(message);
         println 'Attachment ' + csvFile + '.'
         println 'Mail sent.'
