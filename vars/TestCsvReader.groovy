@@ -13,13 +13,12 @@ def call()
         if(allData[i].toString().contains('admin@merge.com'))
         {
           List<String[]> parts =   allData[i].split(',')
-            println '' + parts.size + '.'  
-            println '' + parts[1].toString() + '.'
+             println '' + parts[0].toString() + '.'
+             println '' + parts[1].toString() + '.'
              println '' + parts[2].toString() + '.'
-             println '' + parts[3].toString() + '.'
-             for(def j=0;j<=parts.size;j++)
+             for(def j=0;j<parts.size;j++)
               {
-                tmpMap.putAt(parts[j].toString())
+                tmpMap.putAt(parts[j])
               }
         }
     }
