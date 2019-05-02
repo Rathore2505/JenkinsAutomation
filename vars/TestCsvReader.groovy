@@ -15,7 +15,7 @@ def call()
           List<String[]> parts =   allData[i].split(',')
              for(def j=0;j<=parts.size;j++)
               {
-                tmpMap.putAt(parts[j])
+                tmpMap.putAt(parts[j].toString())
               }
         }
     }
