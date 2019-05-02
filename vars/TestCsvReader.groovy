@@ -10,11 +10,11 @@ def call()
     for (def i=0;i<=allData.size;i++) // Read All Lines
     {
         //boolean fruitFound = allData.any{i.toString().contains('Emilconfig ')}
-        if(i.toString().contains('Emilconfig'))
+        if(allData[i].toString().contains('Emilconfig'))
         {
-           println '' + i.toString() + '.'  
+           println '' + allData[i] + '.'  
         } 
-        println '' + i.toString() + '.' 
+        
     } 
    //println '' + allData.size + '.'
    //rintln 'File All Text' + fileContents + '.'
