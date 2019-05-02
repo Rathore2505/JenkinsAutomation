@@ -20,14 +20,9 @@ def call()
         }
     }
     mapList.add(tmpMap)
-           println '' + mapList + '.'  
-        } 
+    println '' + mapList + '.'  
         
-    } 
-   
+         
     
-    
-    
-   //rintln 'File All Text' + fileContents + '.'
-
+ 
 } 
