@@ -13,7 +13,9 @@ def call()
         if(i.toString().contains('Emilconfig'))
         {
            println '' + i.toString() + '.'  
+            println '' + allData.size + '.' 
         }
+         println '' +allData.size + '.' 
         
       
     } 
