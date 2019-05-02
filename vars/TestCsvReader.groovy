@@ -20,6 +20,6 @@ static TestCsvReader(String Variable ,  int index)
             }
         }
     }
-    return list[indix]
+    return list[index]
  
 } 
