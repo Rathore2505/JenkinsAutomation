@@ -10,7 +10,7 @@ def call()
     List<String[]> allData = fileContents.split('\n')
     for (def i=0;i<=allData.size;i++) // Read All Lines
     {
-        if(allData[i].toString().contains('EmailConfig'))
+        if(allData[i].toString().contains('EmailValue'))
         {
           List<String[]> Spl = allData[i].split('=') 
            println  ''+ Spl[0].toString()  + ''
