@@ -9,14 +9,18 @@ def call()
     List<String[]> allData = fileContents.split('\n')
     for (def i=0;i<=allData.size;i++) // Read All Lines
     {
-        //boolean fruitFound = allData.any{i.toString().contains('Emilconfig ')}
+        
         if(allData[i].toString().contains('Emilconfig'))
         {
-           println '' + allData[i] + '.'  
+          List<String[]> Split =   allData[i].split( )
+           println '' + Split.count + '.'  
         } 
         
     } 
-   //println '' + allData.size + '.'
+   
+    
+    
+    
    //rintln 'File All Text' + fileContents + '.'
 
 } 
