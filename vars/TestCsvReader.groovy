@@ -7,15 +7,16 @@ def call()
     File csvFile = new File('C:\\JenkinsAutomation\\Newjob.csv')
     String fileContents = new File('C:/JenkinsAutomation/Newjob.csv').text
     List<String[]> allData = fileContents.split('\n')
-    //for (String[] row : allData)
-    //{ 
-     //for (String cell : row)
-        //{ 
-        //  println '' + cell + '.'
-        //} 
+    for (def i=0;i<=allData.size;i++) // Read All Lines
+    {
+     if(i.contains('Emilconfig'))
+        {
+           println '' + i + '.'  
+        }
+        
       
-    //} 
-   println '' + allData.size + '.'
+    } 
+   //println '' + allData.size + '.'
    //rintln 'File All Text' + fileContents + '.'
 
 } 
