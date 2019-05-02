@@ -10,5 +10,5 @@ File csvFile = new File('C:\\JenkinsAutomation\\Newjob.csv')
 def data = new CsvParser().parse(csvFile)
 for(line in data) {
     println 'Sending mail to ' + line + '.'
-
+}
 } 
