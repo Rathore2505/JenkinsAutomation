@@ -7,15 +7,15 @@ def call()
     File csvFile = new File('C:\\JenkinsAutomation\\Newjob.csv')
     String fileContents = new File('C:/JenkinsAutomation/Newjob.csv').text
     List<String[]> allData = fileContents.split('\n')
-    for (String[] row : allData)
-    { 
-     for (String cell : row)
-        { 
-          println '' + cell + '.'
-        } 
+    //for (String[] row : allData)
+    //{ 
+     //for (String cell : row)
+        //{ 
+        //  println '' + cell + '.'
+        //} 
       
-    } 
-   //println 'File All Text' + lines + '.'
+    //} 
+   println '' + allData.size + '.'
    //rintln 'File All Text' + fileContents + '.'
 
 } 
