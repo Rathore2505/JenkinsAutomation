@@ -13,8 +13,8 @@ def call()
         if(i.toString().contains('Emilconfig'))
         {
            println '' + i.toString() + '.'  
-            println '' + allData.size + '.' 
         } 
+        println '' + i.toString() + '.' 
     } 
    //println '' + allData.size + '.'
    //rintln 'File All Text' + fileContents + '.'
