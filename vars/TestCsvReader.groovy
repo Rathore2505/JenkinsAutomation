@@ -7,8 +7,7 @@ def call()
 {
 
 File csvFile = new File('C:\\JenkinsAutomation\\Newjob.csv')
-Paths.get(csvFile').withReader
-    { reader ->
+Paths.get(csvFile').withReader { reader ->
     CSVParser csv = new CSVParser(reader, DEFAULT.withHeader())
         for (record in csv.iterator())
         {
