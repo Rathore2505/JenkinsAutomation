@@ -18,7 +18,7 @@ def call()
              println  ''+ parts[2].toString() + ''
              for(def j=0;j<parts.size;j++)
               {
-                tmpMap.putAt('a' , parts[j].toString())
+                tmpMap.putAt('a' , parts[j])
               }
         }
     }
