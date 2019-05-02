@@ -12,7 +12,7 @@ def call()
     {
         if(allData[i].toString().contains('admin@merge.com'))
         {
-          String[] parts =   allData[i].split(',')
+          List<String[]> parts =   allData[i].split(',')
             println '' + parts.size + '.'  
             println '' + parts[1].toString() + '.'
              println '' + parts[2].toString() + '.'
