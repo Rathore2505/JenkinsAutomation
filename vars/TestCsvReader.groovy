@@ -1,23 +1,19 @@
-@Grab('com.opencsv:opencsv:4.0')
-@Grab('com.xlson.groovycsv:groovycsv:0.2')
-import com.opencsv.CSVReader
-import com.opencsv.CSVWriter
-import com.xlson.groovycsv.CsvParser
+Grab('org.apache.commons:commons-csv:1.2')
+import org.apache.commons.csv.CSVParser
+import static org.apache.commons.csv.CSVFormat.*
+import java.nio.file.Paths
 
 def call()
 {
-def mapList = []
 
 File csvFile = new File('C:\\JenkinsAutomation\\Newjob.csv')
+Paths.get(csvFile').withReader
+    { reader ->
+    CSVParser csv = new CSVParser(reader, DEFAULT.withHeader())
+        for (record in csv.iterator())
+        {
+        println record.dump()
+        }
+}
 
-csvFile.eachLine { line ->
-    def parts = line.split(",")
-    def tmpMap = [:]
-
-    tmpMap.putAt("Sno", parts[0])
-    tmpMap.putAt("Service", parts[1])
-   
-
-    mapList.add(tmpMap)
-    //println 'Sending mail to ' + mapList + '.'
 } 
