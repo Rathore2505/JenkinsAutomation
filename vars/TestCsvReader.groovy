@@ -12,9 +12,11 @@ def call()
     {
         if(allData[i].toString().contains('EmailConfig'))
         {
-          List<String[]> SplitValue = allData[i].split('=') 
-           println  ''+ SplitValue[1].toString()  + ''
-          List<String[]> parts =   SplitValue[1].split(',')
+          List<String[]> Spl = allData[i].split('=') 
+           println  ''+ Spl[0].toString()  + ''
+           println  ''+ Spl[1].toString()  + ''
+           println  ''+ allData[i].toString()  + ''
+          List<String[]> parts =   Spl[1].split(',')
              //println  ''+ parts[0].toString() + ''
              //println  ''+ parts[1].toString() + ''
              //println  ''+ parts[2].toString() + ''
