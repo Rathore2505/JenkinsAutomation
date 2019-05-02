@@ -9,10 +9,10 @@ def call()
     List<String[]> allData = fileContents.split('\n')
     for (def i=0;i<=allData.size;i++) // Read All Lines
     {
-        boolean fruitFound = allData.any{i.toString().contains('Emilconfig')}
-        if(fruitFound)
+        //boolean fruitFound = allData.any{i.toString().contains('Emilconfig')}
+        if(i.toString().contains('Emilconfig'))
         {
-           println '' + fruitFound + '.'  
+           println '' + i + '.'  
         }
         
       
