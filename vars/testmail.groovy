@@ -30,10 +30,10 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         // Save the state
         instance.save() 
     
-    Properties props = new Properties();
-    props.put("mail.smtp.host", SMTPHost);
-    props.put("mail.smtp.port", SMTPPort);
-    Session session = Session.getInstance(props, null);
+        Properties props = new Properties();
+        props.put("mail.smtp.host", SMTPHost);
+        props.put("mail.smtp.port", SMTPPort);
+        Session session = Session.getInstance(props, null);
    
         Message message = new MimeMessage(session);
         message.setFrom(new InternetAddress(SystemAdminMailAddress));
@@ -52,9 +52,9 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         multipart.addBodyPart(messageBodyPart)
         println "--> Attachement added"
         message.setContent(multipart)
-        println 'Sending mail to ' + receivers + '.' + Attachment + '....'
+        println 'Sending mail to ' + receivers + '.'
         Transport.send(message);
-        println 'Attachment ' + csvFile + '.'
+        println 'Attachment ' + Attachment + '.'
         println 'Mail sent.'
    
 }
