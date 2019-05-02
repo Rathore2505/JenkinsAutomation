@@ -3,7 +3,7 @@ import com.xlson.groovycsv.CsvParser
 
 def call()
 {
-    def mapList = []
+    
     def list= []
     File csvFile = new File('C:\\JenkinsAutomation\\Newjob.csv')
     String fileContents = new File('C:/JenkinsAutomation/Newjob.csv').text
@@ -23,6 +23,6 @@ def call()
         }
     }
     //mapList.add(tmpMap)
-    println '' + list[] + '.'   
+    println "List Ele"+list.toString()
  
 } 
