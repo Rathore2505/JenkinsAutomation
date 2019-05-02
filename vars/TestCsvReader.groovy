@@ -13,7 +13,7 @@ def call()
         if(allData[i].toString().contains('Emilconfig'))
         {
           List<String[]> Split =   allData[i].split( )
-           println '' + Split.count + '.'  
+           println '' + Split.size + '.'  
         } 
         
     } 
