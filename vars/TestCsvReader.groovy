@@ -6,13 +6,16 @@ def call()
 
     File csvFile = new File('C:\\JenkinsAutomation\\Newjob.csv')
     String fileContents = new File('C:/JenkinsAutomation/Newjob.csv').text
-   List<String[]> lines = fileContents.split('\n')
-    //for (def i=0;i<lines.size;i++) // specify how many line need to read eg.. 30
-   // {
-    //log.info file1.readLines().get(i)  
-
-   // }
-    println 'File All Text' + lines + '.'
-    println 'File All Text' + fileContents + '.'
+    List<String[]> allData = fileContents.split('\n')
+    for (String[] row : allData)
+    { 
+     for (String cell : row)
+        { 
+          System.out.print(cell + "\t"); 
+        } 
+            System.out.println(); 
+    } 
+   //rintln 'File All Text' + lines + '.'
+   //rintln 'File All Text' + fileContents + '.'
 
 } 
