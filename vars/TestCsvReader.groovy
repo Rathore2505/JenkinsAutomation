@@ -24,6 +24,6 @@ def call()
         }
     }
     //mapList.add(tmpMap)
-    println "List Ele"+list.toString()
+    println "List Ele"+list
  
 } 
