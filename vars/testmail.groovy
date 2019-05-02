@@ -42,26 +42,17 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         message.setRecipients(Message.RecipientType.TO, receivers);
         message.setSubject(subject);
         message.setText(text);
-        ////////////////////
         BodyPart messageBodyPart = new MimeBodyPart()
         messageBodyPart.setContent(text,"text/html")
         Multipart multipart = new MimeMultipart()
         multipart.addBodyPart(messageBodyPart)
         messageBodyPart = new MimeBodyPart()
-        File csvFile = new File('C:\\Program Files (x86)\\Jenkins\\Text.txt')
-        messageBodyPart.attachFile(csvFile)  
+        File Attachment = new File('C:\\Program Files (x86)\\Jenkins\\Text.txt')
+        messageBodyPart.attachFile(Attachment)  
         multipart.addBodyPart(messageBodyPart)
         println "--> Attachement added"
-        // Send the complete message parts
         message.setContent(multipart)
-        ///////////////////
-        //Multipart multipart = new MimeMultipart()
-        //messageBodyPart.setContent(text,"text/html")
-        //File csvFile = new File('C:\\Program Files (x86)\\Jenkins\\Text.txt')
-        //BodyPart messageBodyPart = new MimeBodyPart()
-        //messageBodyPart.attachFile(csvFile)
-        //multipart.addBodyPart(messageBodyPart)
-        // println 'Sending mail to ' + receivers + '.'
+        println 'Sending mail to ' + receivers + '.' + Attachment + '....'
         Transport.send(message);
         println 'Attachment ' + csvFile + '.'
         println 'Mail sent.'
