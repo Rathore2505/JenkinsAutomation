@@ -10,20 +10,22 @@ def call()
     List<String[]> allData = fileContents.split('\n')
     for (def i=0;i<=allData.size;i++) // Read All Lines
     {
-        if(allData[i].toString().contains('admin@merge.com'))
+        if(allData[i].toString().contains('EmailConfig'))
         {
-          List<String[]> parts =   allData[i].split(',')
-             println  ''+ parts[0].toString() + ''
-             println  ''+ parts[1].toString() + ''
-             println  ''+ parts[2].toString() + ''
-             for(def j=0;j<parts.size;j++)
-              {
-              list.add(parts[j].toString()) 
-                  println"Part Val "+parts[j]
-              }
+          List<String[]> SplitValue = allData[i].split('=') 
+          List<String[]> parts =   SplitValue[1].split(',')
+             //println  ''+ parts[0].toString() + ''
+             //println  ''+ parts[1].toString() + ''
+             //println  ''+ parts[2].toString() + ''
+          for(def j=0;j<parts.size;j++)
+            {
+            list.add(parts[j].toString()) 
+            }
         }
     }
     //mapList.add(tmpMap)
-    println "List Ele"+list[0]
+    println ""+list[0]
+    println ""+list[1]
+    println ""+list[2]
  
 } 
