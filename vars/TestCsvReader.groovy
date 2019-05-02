@@ -14,10 +14,7 @@ def call()
         {
            println '' + i.toString() + '.'  
             println '' + allData.size + '.' 
-        }
-         println '' +allData.size + '.' 
-        
-      
+        } 
     } 
    //println '' + allData.size + '.'
    //rintln 'File All Text' + fileContents + '.'
