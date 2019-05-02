@@ -23,6 +23,6 @@ def call()
         }
     }
     //mapList.add(tmpMap)
-    println '' + list + '.'   
+    println '' + list[] + '.'   
  
 } 
