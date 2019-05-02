@@ -11,11 +11,11 @@ def call()
     { 
      for (String cell : row)
         { 
-          System.out.print(cell + "\t"); 
+          println '' + cell + '.'
         } 
-            System.out.println(); 
+      
     } 
-   //rintln 'File All Text' + lines + '.'
+   //println 'File All Text' + lines + '.'
    //rintln 'File All Text' + fileContents + '.'
 
 } 
