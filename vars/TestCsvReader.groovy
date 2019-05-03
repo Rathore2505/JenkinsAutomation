@@ -2,7 +2,7 @@
 import com.xlson.groovycsv.CsvParser
 
 //def call(String Variable ,  int index)
-def call()
+
 {
     
     //def list= []
@@ -22,6 +22,13 @@ def call()
         //}
     //}
     //return list[index]
-   CSV.foreach('C:\\JenkinsAutomation\\Newjob.csv').map { |row| row[0] }
- println 'Attachment ' + row[0] + '.'
+    def reader = new CSVReader(new FileReader(new File('C:\\JenkinsAutomation\\Newjob.csv')))
+    def output = reader.collect { it[0].split(';') }.with { rows ->
+    def header = rows.head()
+    def dataRows = rows.tail()
+    println 'Row ' + dataRows + '.'
+    dataRows.collect { row ->
+        [header, row].transpose().collectEntries()
+    }
+}
 } 
