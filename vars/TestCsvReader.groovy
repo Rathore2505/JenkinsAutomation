@@ -23,7 +23,7 @@ def call()
     //}
     //return list[index]
     require 'csv'
-    csv = CSV.read('C:\\JenkinsAutomation\\Newjob.csv', :headers=>true)
+    csv = CSV.read('C:\\JenkinsAutomation\\Newjob.csv', headers=>true)
     p csv['name'] 
  println 'Attachment ' + p + '.'
 } 
