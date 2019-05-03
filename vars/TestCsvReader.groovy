@@ -26,7 +26,7 @@ def call()
     //}
     //return list[index]
     def reader = new CSVReader(new FileReader(new File('C:\\JenkinsAutomation\\Newjob.csv')))
-    def output = reader.collect { it[0].split(';') }.with { rows ->
+    def output = reader.collect { it[0].split(',') }.with { rows ->
     def header = rows.head()
     def dataRows = rows.tail()
     println 'Row ' + dataRows + '.'
