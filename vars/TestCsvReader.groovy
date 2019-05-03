@@ -25,7 +25,7 @@ def call()
         //}
     //}
     //return list[index]
-    class Person {
+    def Person {
     String name
     Integer age
 }
