@@ -29,7 +29,11 @@ def call()
         //}
     //}
     //return list[index]
-   
+   def csv = """\
+name,age
+Charlie,23
+Billy,64"""
+
 // use the mapper
 def ctb = new CsvToBean<Person>()
 def hcnms = new HeaderColumnNameMappingStrategy<Person>()
