@@ -1,6 +1,9 @@
 @Grab('com.xlson.groovycsv:groovycsv:0.2')
 import com.xlson.groovycsv.CsvParser
-
+@Grab('net.sf.opencsv:opencsv:2.3')
+import au.com.bytecode.opencsv.CSVReader
+import au.com.bytecode.opencsv.bean.CsvToBean;
+import au.com.bytecode.opencsv.bean.HeaderColumnNameMappingStrategy;
 //def call(String Variable ,  int index)
 def call()
 {
