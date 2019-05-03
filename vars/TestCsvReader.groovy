@@ -33,7 +33,7 @@ Billy,64"""
 // read the files and keep the first one as the header
 def csvr = new CSVReader(new StringReader(csv))
 def header
-     println 'Attachment ' + csvr.toString() + '.'
+     println ' ' + csvr.toString() + '.'
 while ((line=csvr.readNext())) {
     if (!header) {
         header = line
