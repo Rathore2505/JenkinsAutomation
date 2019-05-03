@@ -33,9 +33,11 @@ Billy,64"""
 // read the files and keep the first one as the header
 def csvr = new CSVReader(new StringReader(csv))
 def header
+     println 'Attachment ' + csvr + '.'
 while ((line=csvr.readNext())) {
     if (!header) {
         header = line
+        println 'Attachment ' + header + '.'
     } else {
         // create a map from the header and the line
         println([header,line].transpose().collectEntries())
