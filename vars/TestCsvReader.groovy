@@ -5,6 +5,10 @@ import au.com.bytecode.opencsv.CSVReader
 import au.com.bytecode.opencsv.bean.CsvToBean;
 import au.com.bytecode.opencsv.bean.HeaderColumnNameMappingStrategy;
 //def call(String Variable ,  int index)
+class Person {
+    String name
+    Integer age
+}
 def call()
 {
     
@@ -25,11 +29,7 @@ def call()
         //}
     //}
     //return list[index]
-    def Person {
-    String name
-    Integer age
-}
-
+   
 // use the mapper
 def ctb = new CsvToBean<Person>()
 def hcnms = new HeaderColumnNameMappingStrategy<Person>()
