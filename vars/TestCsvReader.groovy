@@ -25,22 +25,14 @@ def call()
         //}
     //}
     //return list[index]
-    def csv = """\
-name,age
-Charlie,23
-Billy,64"""
-
-// read the files and keep the first one as the header
-def csvr = new CSVReader(new StringReader(csv))
-def header
-     println ' ' + csvr.toString() + '.'
-while ((line=csvr.readNext())) {
-    if (!header) {
-        header = line
-        println 'Attachment ' + header + '.'
-    } else {
-        // create a map from the header and the line
-        println([header,line].transpose().collectEntries())
-    }
+    class Person {
+    String name
+    Integer age
 }
+
+// use the mapper
+def ctb = new CsvToBean<Person>()
+def hcnms = new HeaderColumnNameMappingStrategy<Person>()
+hcnms.type = Person
+println ctb.parse(hcnms, new StringReader(csv))
 } 
