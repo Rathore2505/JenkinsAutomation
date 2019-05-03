@@ -1,7 +1,8 @@
 @Grab('com.xlson.groovycsv:groovycsv:0.2')
 import com.xlson.groovycsv.CsvParser
 
-def call(String Variable ,  int index)
+//def call(String Variable ,  int index)
+def call()
 {
     
     //def list= []
