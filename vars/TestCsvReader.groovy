@@ -25,13 +25,20 @@ def call()
         //}
     //}
     //return list[index]
-    def reader = new CSVReader(new FileReader(new File('C:\\JenkinsAutomation\\Newjob.csv')))
-    def output = reader.collect { it[0].split(',') }.with { rows ->
-    def header = rows.head()
-    def dataRows = rows.tail()
-    println 'Row ' + dataRows + '.'
-    dataRows.collect { row ->
-        [header, row].transpose().collectEntries()
+    def csv = """\
+name,age
+Charlie,23
+Billy,64"""
+
+// read the files and keep the first one as the header
+def csvr = new CSVReader(new StringReader(csv))
+def header
+while ((line=csvr.readNext())) {
+    if (!header) {
+        header = line
+    } else {
+        // create a map from the header and the line
+        println([header,line].transpose().collectEntries())
     }
 }
 } 
