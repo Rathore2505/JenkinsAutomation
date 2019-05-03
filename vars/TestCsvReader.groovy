@@ -2,7 +2,7 @@
 import com.xlson.groovycsv.CsvParser
 
 //def call(String Variable ,  int index)
-
+def call()
 {
     
     //def list= []
