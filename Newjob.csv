@@ -1,14 +1,33 @@
-[VmSetup]
-Actions,VmName,Network,SnapshotName
-[VmPowerOff-VmRevert-VmPowerOn],pa-tst4-ws16,NEPTUNE,BaseImage
+[@Stage-VmSetup]
+#Actions,node
+VmPowerOff(pa-tst4-ws16,Neptune)-VmRevert(pa-tst4-ws16,neptune,baseimage)-VmPowerOn(pa-tst4-ws16,neptune)
+{VmRevert-VmPowerOn},pa-tst5-ws16,{NEPTUNE | BaseImage}
+{VmPowerOn},pa-tst4-ws16,{NEPTUNE|BaseImage}
 
-[ServerSetup]
-Actions,VmName
-[BuildDownload-Exec_ServerInstall],pa-tst4-ws16
+[@Stage-ServerSetup]
+#Actions,VmName,parameter
+{BuildDownload-Exec_ServerInstall},pa-tst4-ws16
+{BuildDownload},pa-tst5-ws16
+{BuildDownload-Exec_ServerInstall},pa-tst6-ws16
 
-[ClientSetup]
-Actions,VmName
-[SVNCheckout-Exec_ClientScript],pa-tst4-ws16
+[@Stage-ClientSetup]
+#Actions,VmName,parameter
+{Exec_ClientScript()},pa-tst4-ws16
+{SVNCheckout()},pa-tst5-ws16
 
-[EmailConfiguration]
-Emailconfig= admin@merge.com,25,mail.products.network.internal
+[@Stage-EmailConfiguration]
+#Actions,VmName,Parameter(SMTPAdmin,SMTPPort,SMTPHost)
+{SMTPConfiguration},Master,{admin@merge.com|25|mail.products.network.internal}
+
+[@Stage-SendEmail]
+#Actions,VmName,Parameter(Receiver,Subject,Body,Attachment)
+{SMTPConfiguration},Master,{admin@merge.com|25|mail.products.network.internal}
+{SendEmail},Master,{sudhakar.anandan@ravsoftsolutions.com|Demo_Mail|SMTP Mail Received|C:\Newrepo\vars\attachment.txt}
+
+[@Stage-CDOC]
+#Actions,VmName,parameter
+{FPS|QAC},Master,{QS-39670_Functional_Product_Specifications_Excel_Template_Clinical_Review.xlsx | QS-39677_Traceability_Matrix_Template.xls=CDoc_QACSpec.pl;Clinical_Review_3.0_Interval_1_and_2_.csv;CDoc_QACSpec_Template.xls}
+
+[@Stage-GeneralDetails]
+#Actions,VmName,Parameter(BuildOutputlocation,ServerExecutionFile,BuildUrl)
+{Projectdetails},Master,{Pacs | C:\PACS_build\8_1_0,C:\imgdrv\Supdate.pl | http://10.4.16.25:8080/job/CURRENT_FULL/lastSuccessfulBuild/artifact/server/cds/IBM%20Merge%20PACS%20Server%20Software%20CD/*zip*/IBM%20Merge%20PACS%20Server%20Software%20CD.zip}
