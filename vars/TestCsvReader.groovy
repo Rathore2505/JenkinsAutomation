@@ -8,7 +8,7 @@ List ReadCSVFile(String header)
 		int k = 0
 		int rowCount = 0
 		int colCount = 0
-		def file = new File("C:/Newrepo/vars/ConfigParam.csv")
+		def file = new File("C:/JenkinsAutomation/Newjob.csv")
 		List Arrayvalues = new ArrayList()
 		String[] lines = file.text.split('\n')
 		rowCount = lines.size();
