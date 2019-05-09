@@ -1,28 +1,38 @@
-@Grab('com.xlson.groovycsv:groovycsv:0.2')
-import com.xlson.groovycsv.CsvParser
-@Grab('net.sf.opencsv:opencsv:2.3')
-import au.com.bytecode.opencsv.CSVReader
-import au.com.bytecode.opencsv.bean.CsvToBean;
-import au.com.bytecode.opencsv.bean.HeaderColumnNameMappingStrategy;
-def call(String Variable ,  int index)
-{
-    
-    def list= []
-    File csvFile = new File('C:\\JenkinsAutomation\\Newjob.csv')
-    String fileContents = new File('C:/JenkinsAutomation/Newjob.csv').text
-    List<String[]> allData = fileContents.split('\n')
-    for (def i=0;i<=allData.size;i++) // Read All Lines
-    {
-        if(allData[i].toString().contains('Variable'))
-        {
-          List<String[]> Spl = allData[i].split('=') 
-          List<String[]> parts =   Spl[1].split(',')
-          for(def j=0;j<parts.size;j++)
-            {
-            list.add(parts[j].toString()) 
-            }
-        }
-    }
-    return list[index]
- 
-} 
+List ReadCSVFile(String header)
+	{
+		println "List ReadCSVFile.groovy file executed"
+		int row = 0
+		int col = 0
+		int i = 0
+		int j = 0
+		int k = 0
+		int rowCount = 0
+		int colCount = 0
+		def file = new File("C:/Newrepo/vars/ConfigParam.csv")
+		List Arrayvalues = new ArrayList()
+		String[] lines = file.text.split('\n')
+		rowCount = lines.size();
+		for(i =0; i<rowCount; i++)
+		{
+			if(lines[i].contains(header))
+			{
+				row = i+2
+				break
+			}
+		}
+		for(j=row;j<rowCount;j++)
+		{
+			if(lines[j].contains("@Stage") || lines[j] == "<EOF>" || lines[j] == '\r')
+				break
+			else
+				Arrayvalues.add(lines[j].toString())
+		}
+		int n = Arrayvalues.size()
+		for(k=0;k<n;k++)
+		{
+			Arrayvalues[k] = Arrayvalues[k].replace('{', '')
+			Arrayvalues[k] = Arrayvalues[k].replace('}', '')
+			Arrayvalues[k] = Arrayvalues[k].replace(' ', '')
+		}
+		return Arrayvalues
+	}
