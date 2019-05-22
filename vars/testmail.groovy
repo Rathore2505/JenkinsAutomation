@@ -54,7 +54,7 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         //message.setContent(multipart)
        // println 'Sending mail to ' + receivers + '.'
         Transport.send(message);
-        println 'Attachment ' + Attachment + '.'
+        //println 'Attachment ' + Attachment + '.'
         println 'Mail sent.'
    
 }
