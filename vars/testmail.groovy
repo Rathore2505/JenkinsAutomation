@@ -47,12 +47,12 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         Multipart multipart = new MimeMultipart()
         multipart.addBodyPart(messageBodyPart)
         messageBodyPart = new MimeBodyPart()
-        File Attachment = new File('P:\\Text.txt')
-        messageBodyPart.attachFile(Attachment)  
-        multipart.addBodyPart(messageBodyPart)
-        println "--> Attachement added"
-        message.setContent(multipart)
-        println 'Sending mail to ' + receivers + '.'
+        //File Attachment = new File('P:\\Text.txt')
+       // messageBodyPart.attachFile(Attachment)  
+        //multipart.addBodyPart(messageBodyPart)
+        //println "--> Attachement added"
+        //message.setContent(multipart)
+       // println 'Sending mail to ' + receivers + '.'
         Transport.send(message);
         println 'Attachment ' + Attachment + '.'
         println 'Mail sent.'
