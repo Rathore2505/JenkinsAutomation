@@ -47,7 +47,7 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         Multipart multipart = new MimeMultipart()
         multipart.addBodyPart(messageBodyPart)
         messageBodyPart = new MimeBodyPart()
-        File Attachment = new File('C:\\Program Files (x86)\\Jenkins\\Text.txt')
+        File Attachment = new File('C:\\Text.text')
         messageBodyPart.attachFile(Attachment)  
         multipart.addBodyPart(messageBodyPart)
         println "--> Attachement added"
